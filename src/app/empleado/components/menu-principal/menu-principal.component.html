@@ -1,0 +1,61 @@
+<p>menu-principal works empleado!</p>
+<input class="button" type="button" value=" cerrar sesion" (click)="this.salir()" />
+<input class="button" type="button" value=" Proveedores" (click)="this.proveedores()" />
+
+<input class="button" type="button" value=" guardar session" (click)="this.gu()" />
+<input class="button" type="button" value=" consultar session" (click)="this.con()" />
+<router-outlet></router-outlet>
+<nav class="animenu" role="navigation" aria-label="Menu">
+  <button class="animenu__btn" type="button">
+    <span class="animenu__btn__bar"></span>
+    <span class="animenu__btn__bar"></span>
+    <span class="animenu__btn__bar"></span>
+  </button>
+  <ul class="animenu__nav">
+    <li>
+      <a href="#" class="animenu__nav__hasDropdown" aria-haspopup="true">Cuenta</a>
+      <ul class="animenu__nav__dropdown" aria-label="submenu" role="menu">
+        <li><a role="menuitem" >Perfil</a></li>
+        <li><a role="menuitem">Cambiar Contraseña</a></li>
+        <li><a role="menuitem" (click)="this.navegacionMenu('cerrarSesion')" >Cerrar Session</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#" class="animenu__nav__hasDropdown" aria-haspopup="true">Usuarios</a>
+      <ul class="animenu__nav__dropdown" aria-label="submenu" role="menu">
+        <li><a role="menuitem" (click)="this.navegacionMenu('registroUsuario')"  >Crear Usuario</a></li>
+        <li><a role="menuitem" (click)="this.navegacionMenu('consultaUsuario')">Consultar Usuario</a></li>
+        <li><a  role="menuitem" (click)="this.navegacionMenu('actualizarUsuario')">Actualizar Usuario</a></li>
+        <li><a  role="menuitem" (click)="this.navegacionMenu('eliminarUsuario')">Eliminar Usuario</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#" class="animenu__nav__hasDropdown" aria-haspopup="true">Clientes</a>
+      <ul class="animenu__nav__dropdown" aria-label="submenu" role="menu">
+        <li><a role="menuitem" (click)="this.navegacionMenu('registroCliente')"  >Crear Cliente</a></li>
+        <li><a role="menuitem" (click)="this.navegacionMenu('consultaCliente')">Consultar Cliente</a></li>
+        <li><a  role="menuitem" (click)="this.navegacionMenu('actualizarCliente')">Actualizar Cliente</a></li>
+        <li><a  role="menuitem" (click)="this.navegacionMenu('eliminarCliente')">Eliminar Cliente</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#" class="animenu__nav__hasDropdown" aria-haspopup="true">Proveedor</a>
+      <ul class="animenu__nav__dropdown" aria-label="submenu" role="menu">
+        <li><a role="menuitem" routerLink="administrador/crear-proveedor" >Crear Proveedor</a></li>
+        <li><a role="menuitem"  routerLink="administrador/consultar-proveedor" >Consultar Proveedor</a></li>
+        <li><a  role="menuitem"  routerLink="administrador/actualizar-proveedor" >Actualizar Proveedor</a></li>
+        <li><a  role="menuitem"  routerLink="administrador/eliminar-proveedor" >Eliminar Proveedor</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#" class="animenu__nav__hasDropdown" aria-haspopup="true">Cursos</a>
+      <ul class="animenu__nav__dropdown" aria-label="submenu" role="menu">
+        <li><a role="menuitem">Crear curso</a></li>
+        <li><a role="menuitem">Editarcurso</a></li>
+        <li><a  role="menuitem">Actualizar Curso</a></li>
+      </ul>
+    </li>
+
+  </ul>
+</nav>
+
