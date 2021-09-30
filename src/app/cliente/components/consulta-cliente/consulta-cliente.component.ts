@@ -32,7 +32,7 @@ export class ConsultaClienteComponent implements OnInit {
             console.log(this.clientesObtenidos);
             this.cliente.nombre = data[0].nombre,
             this.cliente.apellido = data[0].apellido,
-            this.cliente.nit = data[0].nit,
+            this.cliente.nit = data[0].nit_cliente,
             this.cliente.edad = data[0].edad,
             this.cliente.genero = data[0].genero,
             this.cliente.telefono = data[0].telefono,

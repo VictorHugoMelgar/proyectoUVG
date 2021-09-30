@@ -15,7 +15,7 @@ export class ClienteService {
   consultarCliente(cliente:Cliente){
     const nit_cliente=cliente.nit
     console.log(nit_cliente)
-    return this.http.get('http://localhost:3000/cliente/consultarCliente/'+nit_cliente)
+    return this.http.get('http://localhost:3000/cliente/consultarCliente/'+cliente.nit)
     .pipe(map(resultado =>{
     return resultado
     }))
@@ -31,7 +31,7 @@ registrarCliente(cliente:Cliente){
     genero:cliente.genero,
     edad:cliente.edad,
     direccion:cliente.direccion,
-    nit_cliente:cliente.nit,
+    nit:cliente.nit,
     fechaNac:cliente.fecha_nacimiento,
     correo:cliente.correo,
     estado:cliente.idEstado,
@@ -43,10 +43,11 @@ return this.http.post<any>('http://localhost:3000/cliente/registrarCliente', bod
 
 
   actualizarCliente(cliente:Cliente,clienteConsultado:String){
+   // console.log(clienteConsultado);
     const headers = {  };
     const body = {
    //   usuario:usuario.user,
-   nit_cliente:clienteConsultado,
+   nit:clienteConsultado,
    nombres:cliente.nombre,
    apellidos:cliente.apellido,
    numero:cliente.telefono,
@@ -66,7 +67,7 @@ return this.http.post<any>('http://localhost:3000/cliente/registrarCliente', bod
   eliminarUsuario(cliente:Cliente){
     const headers = {  };
     const body = {
-    nit_cliente:cliente.nit,
+    nit:cliente.nit,
      };
   return this.http.post<any>('http://localhost:3000/cliente/eliminarCliente', body).pipe(map(resultado =>{
       return resultado
