@@ -10,11 +10,11 @@
   display: flex;
   justify-content: center;
 }
-form[name=proveedores]{
+form[name=productos]{
    background-image: url("https://lh3.googleusercontent.com/proxy/1R_8JmRCMJypgKxZlWKWk7n9J-CTBvdUix_ShTqmfJVSMmuurk7sMOwseqJ_iFcFrw2mfmsJvsSK51V3FuZ35vpsssT6u71MTUqWWitdPZ3aT6o");
    max-width: 100%;
 }
-form[name=proveedores] {
+form[name=productos] {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
@@ -79,7 +79,7 @@ input[type=submit]:hover {
   background-color: rgb(50, 108, 233);
 }
 @media only screen and (min-width: 993px) {
-  form[name=proveedores] {
+  form[name=productos] {
     width: 70%;
   }
 }

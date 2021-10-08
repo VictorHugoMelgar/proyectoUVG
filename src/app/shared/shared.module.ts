@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 import { RegistroProveedorComponent } from './components/proveedor/registro-proveedor/registro-proveedor.component';
-
+import { ProductosComponent } from './components/productos/productos.component';
 /*shared module aloja los componentes no principales que se compartiran entre nuestros componentes
 principales que en este caso son el administrador y el empledo, hacemos esto para evitar la duplicidad de componentes
 
@@ -20,13 +23,19 @@ https://docs.angular.lat/guide/sharing-ngmodules
 */
 @NgModule({
   declarations: [
-    RegistroProveedorComponent
+    RegistroProveedorComponent,
+    ProductosComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    HttpClientModule,
+    FormsModule 
+    
   ],
   exports:[
     RegistroProveedorComponent,
+    ProductosComponent,
+
   ]
 
 })

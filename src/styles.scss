@@ -1,4 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; 
+    -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+    background-image: url("https://www.ecestaticos.com/imagestatic/clipping/166/20c/16620c35ea06e264e49cb0478805f3d2/mercadona-suelta-lastre-inmobiliario-vende-27-supermercados-por-180m-a-un-fondo.jpg?mtime=1622470020");
+   
+  }
