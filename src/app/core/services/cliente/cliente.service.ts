@@ -12,6 +12,8 @@ export class ClienteService {
   constructor(private http:HttpClient) {
     this.cliente=new Cliente;
    }
+
+
   consultarCliente(cliente:Cliente){
     const nit_cliente=cliente.nit
     console.log(nit_cliente)
@@ -21,6 +23,10 @@ export class ClienteService {
     }))
 
 }
+
+
+
+
 
 registrarCliente(cliente:Cliente){
   const headers = {  };

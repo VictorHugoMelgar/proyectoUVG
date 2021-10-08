@@ -32,7 +32,8 @@ y ajustas la ruta del from por si teda error
     MatFormFieldModule,
     MatIconModule,
     MatButtonModule,
-    MatMenuModule
+    MatMenuModule,
+    MatCardModule
 
   ],
     exports: [

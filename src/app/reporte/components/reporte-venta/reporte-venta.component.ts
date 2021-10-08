@@ -4,26 +4,24 @@ import { CatalogoService } from 'src/app/core/services/catalogo/catalogo.service
 import { ClienteService } from 'src/app/core/services/cliente/cliente.service';
 
 @Component({
-  selector: 'app-consulta-venta',
-  templateUrl: './consulta-venta.component.html',
-  styleUrls: ['./consulta-venta.component.scss']
+  selector: 'app-reporte-venta',
+  templateUrl: './reporte-venta.component.html',
+  styleUrls: ['./reporte-venta.component.scss']
 })
-export class ConsultaVentaComponent implements OnInit {
+export class ReporteVentaComponent implements OnInit {
   ListadoVentas:Venta[];
   ventaObtenida:Venta;
-  DisableComponent=false;
-  formatoFecha='';
-  fecha='';
 
   constructor(private catalogoService:CatalogoService,private clienteService:ClienteService) {
     this.ListadoVentas=new Array<Venta>();
     this.ventaObtenida=new Venta();
-    this.CargarVentas();
    }
 
+   DescargarReporte(){
 
+   }
    public CargarVentas():void{
-    this.catalogoService.consultarCatalogoVentas().subscribe(
+    this.catalogoService.consultarCatalogoSucursal().subscribe(
       (res) => {
         const data: any = res;
         if (data != null) {
@@ -35,12 +33,7 @@ export class ConsultaVentaComponent implements OnInit {
 
               this.ventaObtenida.id_venta = data[i].id_venta,
               this.ventaObtenida.id_cliente = data[i].id_cliente,
-             // this.ventaObtenida.fecha_venta = data[i].fecha_venta,
-              this.formatoFecha = data[0].fecha_venta,
-              this.fecha = this.formatoFecha.substring(0,4)+'-'
-              this.fecha = this.fecha + this.formatoFecha.substring(5,7)+'-'
-              this.fecha = this.fecha + this.formatoFecha.substring(8,10)
-              this.ventaObtenida.fecha_venta = this.fecha,
+              this.ventaObtenida.fecha_venta = data[i].fecha_venta,
               this.ventaObtenida.nombre_cliente = data[i].nombre_cliente,
               this.ventaObtenida.direccion_cliente = data[i].direccion_cliente,
               this.ventaObtenida.total_venta = data[i].total_venta,
@@ -63,11 +56,10 @@ export class ConsultaVentaComponent implements OnInit {
     );
   }
 
-  public consultarVenta():void{
-  this.DisableComponent =!this.DisableComponent;
-  }
 
   ngOnInit(): void {
   }
 
-}
+  }
+
+

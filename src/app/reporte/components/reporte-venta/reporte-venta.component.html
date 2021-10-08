@@ -1,0 +1,30 @@
+<mat-card>
+  <div id="htmlData">
+    <h2>Listado de Productos de la venta</h2>
+    <table class="table table-bordered mt-4"
+    border="1">
+      <tr class="table-primary">
+        <th>Id Producto</th>
+        <th>Nombre</th>
+        <th>precio</th>
+        <th>cantidad</th>
+      </tr>
+      <tr *ngFor="let venta of ListadoVentas">
+        <th>{{ venta.fecha_venta }}</th>
+        <td>{{ venta.id_sucursal }}</td>
+        <td>{{ venta.nombre_cliente }}</td>
+        <td>{{ venta.id_tipo_transaccion }}</td>
+        <td>{{ venta.id_estado }}</td>
+        <td>{{ venta.total_venta }}</td>
+        <td><button (click)="DescargarReporte()">Descargar Reporte</button></td>
+      </tr>
+    </table>
+  </div>
+  <div class="buttonContainer">
+    <button
+      class="button"
+    >
+      Volver al Menu Principal
+    </button>
+  </div>
+  </mat-card>

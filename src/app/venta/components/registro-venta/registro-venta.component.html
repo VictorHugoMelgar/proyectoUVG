@@ -1,1 +1,174 @@
-<p>registro-venta works!</p>
+<mat-card>
+  <table border="0" class="table-doc">
+    <tr>
+      <td>
+        <label class="etiqueta">nit: *</label>
+        <input
+          class="entrada"
+          type="text"
+          id="nit"
+          name="nit"
+          placeholder="ingrese el nit"
+          maxlength="13"
+          minlength="13"
+          #nit="ngModel"
+          matInput
+          [(ngModel)]="cliente.nit"
+        />
+      </td>
+      <td>
+        <label class="etiqueta">Fecha: *</label>
+        <input
+          class="entrada"
+          type="date"
+          id="fecha"
+          name="fecha"
+          placeholder="ingrese la fecha"
+          #fecha="ngModel"
+          matInput
+          [(ngModel)]="cliente.fecha_nacimiento"
+        />
+      </td>
+    </tr>
+    <tr>
+      <td>
+         <label class="etiqueta">Nombre del Cliente: *</label>  <input
+          class="entrada"
+          type="text"
+          id="nombre"
+          placeholder="ingrese el nombre"
+          maxlength="18"
+          minlength="1"
+          onkeypress="return (event.charCode >= 65 && event.charCode <= 90   || event.charCode >=8  || event.charCode >=9
+                 || event.charCode >= 97 && event.charCode <= 122)"
+          type="text"
+          name="nom"
+          #nom="ngModel"
+          matInput
+          [(ngModel)]="cliente.nombre"
+        />
+      </td>
+      <td>
+        <label class="etiqueta">Direcccion: *</label>
+        <input
+          class="entrada"
+          type="text"
+          id="direccion"
+          placeholder="ingrese la direccion"
+          maxlength="18"
+          minlength="1"
+          onkeypress="return (event.charCode >= 65 && event.charCode <= 90 || event.charCode >=8  || event.charCode >=9
+    || event.charCode >= 97 && event.charCode <= 122)"
+          type="text"
+          name="direccion"
+          #direccion="ngModel"
+          matInput
+          [(ngModel)]="cliente.direccion"
+        />
+      </td>
+    </tr>
+    <tr>
+      <td>
+         <label class="etiqueta">Estado: *</label>             <select
+          id="estado"
+          class="entrada"
+          name="estado"
+          #estado="ngModel"
+          matInput
+          [(ngModel)]="cliente.idEstado"
+        >
+        <option value="{{estado.id}}" *ngFor="let estado of catalogoEstado" >{{estado.descripcion}}</option>
+
+
+        </select>
+      </td>
+
+      <td>
+         <label class="etiqueta">Transaccion: *</label>             <select
+          id="estado"
+          class="entrada"
+          name="transaccion"
+          #transaccion="ngModel"
+          matInput
+          [(ngModel)]="cliente.correo"
+        >
+
+        <option value="{{transaccion.id}}" *ngFor="let transaccion of catalogoTransaccion" >{{transaccion.descripcion}}</option>
+
+
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>
+         <label class="etiqueta">Sucursal: *</label>
+        <select
+          id="sucursal"
+          class="entrada"
+          name="sucursal"
+          #sucursal="ngModel"
+          matInput
+          [(ngModel)]="cliente.nit"
+        >
+          <option value="{{sucursal.id}}" *ngFor="let sucursal of catalogoSucursal" >{{sucursal.descripcion}}</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label class="etiqueta">id Porducto : *</label>
+        <input
+          class="entrada"
+          type="idPoducto"
+          id="idPoducto"
+          name="idPoducto"
+          placeholder="ingrese el id del producto"
+          #idPoducto="ngModel"
+          matInput
+          [(ngModel)]="cliente.edad"
+        />
+      </td>
+      <td>
+        <button
+          class="btnAgregar"
+          (click)="AgregarProducto()"
+
+        >
+          Agregar Producto
+        </button>
+      </td>
+    </tr>
+  </table>
+  <div id="htmlData">
+    <h2>Listado de Productos de la venta</h2>
+    <table class="table table-bordered mt-4"
+    border="1">
+      <tr class="table-primary">
+        <th>Id Producto</th>
+        <th>Nombre</th>
+        <th>precio</th>
+        <th>cantidad</th>
+      </tr>
+      <tr *ngFor="let producto of ListadoProductos">
+        <th>{{ producto }}</th>
+        <td>{{ producto }}</td>
+        <td>{{ producto }}</td>
+        <td>{{ producto }}</td>
+        <td><button (click)="eliminarProducto()">Eliminar</button></td>
+      </tr>
+      <tr>
+        <td>Total</td>
+        <td></td><td></td>
+        <td class="totalResultado">{{ TotalVenta }}</td>
+      </tr>
+    </table>
+  </div>
+  <div class="buttonContainer">
+    <button
+      class="button"
+      (click)="GuardarVenta()"
+    >
+      Registrar Venta
+    </button>
+  </div>
+</mat-card>
