@@ -20,6 +20,14 @@ export class ProductosService {
       })
     );
   }
+  consultarPorExistencias(productos: Productos) {
+    return this.http.get('http://localhost:3000/productos/' + productos.id_producto).pipe(
+      map((resultado) => {
+        return resultado;
+      })
+    );
+  }
+
   elimnarProductos(productos: Productos) {
     return this.http.delete('http://localhost:3000/productos/' + productos.id_producto).pipe(
       map((resultado) => {

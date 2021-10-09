@@ -1,4 +1,5 @@
 export class Cliente {
+    id_cliente:number;
     nombre: string;
     apellido: string;
     nit: string;
@@ -10,7 +11,8 @@ export class Cliente {
     direccion: string;
     idEstado: number;
 
-    constructor( nombre = '', apellido = '',nit = '', telefono = '',edad = 0,correo = '',genero = 0,fecha_nacimiento = '',direccion = '', idEstado = 0){
+    constructor(id_cliente=0, nombre = '', apellido = '',nit = '', telefono = '',edad = 0,correo = '',genero = 0,fecha_nacimiento = '',direccion = '', idEstado = 0){
+      this.id_cliente=id_cliente;
       this.nombre = nombre;
       this.apellido = apellido;
       this.nit=nit;

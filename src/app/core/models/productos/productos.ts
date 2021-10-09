@@ -9,9 +9,12 @@ export class Productos {
   idsucursal: string;
   idestado: string;
   idtipoproducto: string;
+  CantidadProductoVenta:Number;//extra a lo que agrego edwin es para facilitar la gestion de las ventas
+  SubTotalProductoVenta:Number;//extra a lo que agrego edwin es para facilitar la gestion de las ventas
+
 
   constructor(id_producto = '', descripcion = '', marca = '',  existencias = '', preciocosto= '', precioventa = ''
-  , nitproveedor = '', idsucursal = '', idestado = '', idtipoproducto = ''){
+  , nitproveedor = '', idsucursal = '', idestado = '', idtipoproducto = '',CantidadProductoVenta=0,SubTotalProductoVenta=0){
 
     this.id_producto = id_producto;
     this.descripcion = descripcion;
@@ -23,6 +26,7 @@ export class Productos {
     this.idsucursal = idsucursal;
     this.idestado = idestado;
     this.idtipoproducto = idtipoproducto;
-
+    this.CantidadProductoVenta=CantidadProductoVenta;
+    this.SubTotalProductoVenta=SubTotalProductoVenta;
   }
 }

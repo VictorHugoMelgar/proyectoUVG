@@ -47,7 +47,7 @@ export class ConsultaVentaComponent implements OnInit {
               this.ventaObtenida.id_estado = data[i].id_estado,
               this.ventaObtenida.id_tipo_transaccion = data[i].id_tipo_transaccion,
               this.ventaObtenida.id_usuario = data[i].id_usuario,
-              this.ventaObtenida.id_sucursal = data[i].id_sucursal,
+              this.ventaObtenida.id_sucursal = data[i].nombre_sucursal,
 
               this.ListadoVentas.push(this.ventaObtenida);
               this.ventaObtenida=new Venta();

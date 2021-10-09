@@ -48,6 +48,7 @@ export class LoginComponent implements OnInit {
           } else {
             console.log(this.usuariosObtenidos);
             this.authservice.autenticado=true
+            sessionStorage.setItem("id_usuario",data[0].id_usuario);
             if (data[0].id_rol===1) {
               this.authservice.rol="administrador"
             this.router.navigateByUrl('/administrador/menu');
