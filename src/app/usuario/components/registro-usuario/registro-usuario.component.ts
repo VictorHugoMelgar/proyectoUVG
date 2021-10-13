@@ -21,7 +21,8 @@ export class RegistroUsuarioComponent implements OnInit {
   }
 
 registrarUsuario(){
-if(this.usuario.user!=null && this.usuario.pass!=null && this.usuario.nombre!=null && this.usuario.apellido!=null &&
+if(this.usuario.user!=null && this.usuario.pass!=null && 
+  this.usuario.nombre!=null && this.usuario.apellido!=null &&
   this.usuario.idRol!=0 && this.usuario.idEstado!=0){
 
       this.usuarioService.registrarUsuario(this.usuario).subscribe(data => {

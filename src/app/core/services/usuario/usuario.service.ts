@@ -66,7 +66,7 @@ export class UsuarioService {
           }
 
 
-        eliminarUsuario(usuario:Usuario,usuarioConsultado:String){
+         eliminarUsuario(usuario:Usuario,usuarioConsultado:String){
           const headers = {  };
           const body = {
             usuario:usuario.user,

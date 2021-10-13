@@ -1,1 +1,150 @@
-<p>consulta-sucursal works!</p>
+<p>In the name of GOD</p>
+    
+<mat-card>
+    <mat-card-content style="text-align: center;">
+        <form>
+            <table border="0">
+                <tr>
+                  
+                    <td>
+                                <label class="etiqueta">Nombre de la Sucursal:</label>  <input
+                        class="entrada"
+                        type="text"
+                        id="login_name"
+                        placeholder="ingrese el login_name del usuario"
+                        maxlength="18"
+                        minlength="1"
+                        onkeypress="return (event.charCode >= 65 && event.charCode <= 90
+                             || event.charCode >= 97 && event.charCode <= 122)"
+                        name="login_name"
+                        #login_name="ngModel"
+                        matInput
+                        [(ngModel)]="sucursal.nombre"
+          
+                      />
+          
+          
+                    </td>
+          
+                            
+                    <td>
+                                <label class="etiqueta">Descripcion</label>
+                                    <input
+                        class="entrada"
+                        type="text"
+                        id="contraseña"
+                        maxlength="13"
+                        minlength="13"
+                        disabled="true"
+                        name="password"
+                        #password="ngModel"
+                        matInput
+                        [(ngModel)]="sucursal.descripcion"
+                      />
+                              
+                    </td>
+                          
+                  </tr>
+
+                  <tr>
+                  
+                    
+                            
+                    <td>
+                                <label class="etiqueta">Direccion:</label>           <input
+                        class="entrada"
+                        type="text"
+                        id="apellido"
+                        maxlength="18"
+                        minlength="1"
+                        onkeypress="return (event.charCode >= 65 && event.charCode <= 90  || event.charCode >=8  || event.charCode >=9
+                             || event.charCode >= 97 && event.charCode <= 122)"
+                  disabled="true"
+                  name="apellido"
+                  #apellido="ngModel"
+                  matInput
+                  [(ngModel)]="sucursal.direccion"
+                      />
+                              
+                    </td>
+                      
+                    <td>
+                                <label class="etiqueta">Telefono:</label>         <input
+                        class="entrada"
+                        type="text"
+                        id="nombre"
+                        maxlength="18"
+                        minlength="1"
+                        onkeypress="return (event.charCode >= 65 && event.charCode <= 90  || event.charCode >=8  || event.charCode >=9
+                             || event.charCode >= 97 && event.charCode <= 122)"
+                   name="nombre"
+                   #nombre="ngModel"
+                   matInput
+                   [(ngModel)]="sucursal.telefono"
+                   disabled="true"
+                      />
+                              
+                    </td>    
+                  </tr>
+
+                  <tr>
+                        <td>
+                                  <label class="etiqueta">Correo:</label>           <input
+                          class="entrada"
+                          type="text"
+                          id="correo"
+                          maxlength="18"
+                          minlength="1"
+                          onkeypress="return (event.charCode >= 65 && event.charCode <= 90  || event.charCode >=8  || event.charCode >=9
+                               || event.charCode >= 97 && event.charCode <= 122)"
+                    disabled="true"
+                    name="correo"
+                    #apellido="ngModel"
+                    matInput
+                    [(ngModel)]="sucursal.correo"
+                        />
+                                
+                      </td>
+                    
+                            
+                    <td>
+                                <label class="etiqueta">Estado:</label>
+                                  <select id="estado" class="entrada" disabled="true"
+                      name="estado"
+                      #estado="ngModel"
+                      matInput
+                      [(ngModel)]="sucursal.idEstado">
+                                    
+                        <option value="0">Seleccione</option>
+                                    
+                        <option value="1">Activo</option>
+                                    
+                        <option value="2">Inactivo</option>
+                                    
+                      </select>
+                              
+                    </td>
+                          
+                  </tr>
+
+
+
+
+
+            </table>
+        </form>
+        <input
+      class="button"
+      type="button"
+      value="Consultar usuario"
+      (click)="this.consultarSucursal()"
+    />
+    <br />
+    <input
+      class="button-salida"
+      type="button"
+      value="Regresar al menu principal"
+      routerLink="/menu"
+    />
+    </mat-card-content>
+</mat-card>
