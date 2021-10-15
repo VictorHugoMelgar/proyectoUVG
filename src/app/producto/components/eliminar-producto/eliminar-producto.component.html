@@ -1,0 +1,14 @@
+
+<div id="formulario">
+  <form name="proveedores" method="post">
+    <div class="campo">
+      <label class="titulo" id="NIT">Id Producto</label>
+      <input type="text" class="telefone" pattern=".{13,14}" maxlength="14" name="nit" #id_producto="ngModel" matIput [(ngModel)]="productos.id_producto" placeholder="xxxxxxxxxx" required>
+      <label id="respostaTel" class="animated shake"></label>
+    </div>
+    
+
+    <input type="submit" value="Eliminar" (click)="this.eliminarProductos()">
+   
+  </form>
+</div>

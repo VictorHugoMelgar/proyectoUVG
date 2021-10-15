@@ -1,0 +1,37 @@
+<mat-card *ngIf="!DisableComponent">
+<div id="htmlData">
+  <h2>Ventas</h2>
+  <table class="table-doc"
+  border="1">
+    <tr class="table-primary">
+      <th>Fecha</th>
+      <th>Sucursal</th>
+      <th>Cliente</th>
+      <th>Forma de Pago</th>
+      <th>Estado</th>
+      <th>Total de la venta</th>
+      <th>Accion</th>
+    </tr>
+    <tr *ngFor="let venta of ListadoVentas">
+      <th>{{ venta.fecha_venta }}</th>
+      <td>{{ venta.id_sucursal }}</td>
+      <td>{{ venta.nombre_cliente }}</td>
+      <td>{{ venta.id_tipo_transaccion }}</td>
+      <td>{{ venta.id_estado }}</td>
+      <td>{{ venta.total_venta }}</td>
+      <td><button (click)="consultarVenta()">Consultar</button></td>
+    </tr>
+  </table>
+</div>
+<div class="buttonContainer">
+  <button
+    class="button"
+  >
+    Volver al Menu Principal
+  </button>
+</div>
+</mat-card>
+<mat-card *ngIf="DisableComponent">
+  <H1>Hola xD</H1>
+  <button (click)="consultarVenta()">Volver</button>
+</mat-card>

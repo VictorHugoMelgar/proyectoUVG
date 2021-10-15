@@ -1,0 +1,154 @@
+<mat-card >
+  <table border="0" class="table-doc">
+    <tr>
+      <td>
+        <label class="etiqueta">nit: *</label>
+        <input
+          class="entrada"
+          type="text"
+          id="nit"
+          name="nit"
+          placeholder="ingrese el nit"
+          maxlength="13"
+          minlength="13"
+          #nit="ngModel"
+          matInput
+          [(ngModel)]="cliente.nit"
+        />
+      </td>
+      <td>
+        <label class="etiqueta">Fecha: *</label>
+        <input
+          class="entrada"
+          type="date"
+          id="fecha"
+          name="fecha"
+          placeholder="ingrese la fecha"
+          #fecha="ngModel"
+          matInput
+          [(ngModel)]="venta.fecha_venta"
+        />
+      </td>
+    </tr>
+    <tr>
+      <td>
+         <label class="etiqueta">Estado: *</label>             <select
+          id="estado"
+          class="entrada"
+          name="estado"
+          #estado="ngModel"
+          matInput
+          [(ngModel)]="venta.id_estado"
+        >
+        <option value="{{estado.id}}" *ngFor="let estado of catalogoEstado" >{{estado.descripcion}}</option>
+
+
+        </select>
+      </td>
+
+      <td>
+         <label class="etiqueta">Transaccion: *</label>             <select
+          id="estado"
+          class="entrada"
+          name="transaccion"
+          #transaccion="ngModel"
+          matInput
+          [(ngModel)]="venta.id_tipo_transaccion"
+        >
+
+        <option value="{{transaccion.id}}" *ngFor="let transaccion of catalogoTransaccion" >{{transaccion.descripcion}}</option>
+
+
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>
+         <label class="etiqueta">Sucursal: *</label>
+        <select
+          id="sucursal"
+          class="entrada"
+          name="sucursal"
+          #sucursal="ngModel"
+          matInput
+          [(ngModel)]="venta.id_sucursal"
+        >
+          <option value="{{sucursal.id}}" *ngFor="let sucursal of catalogoSucursal" >{{sucursal.descripcion}}</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label class="etiqueta">id Porducto : *</label>
+        <input
+          class="entrada"
+          type="idPoducto"
+          id="idPoducto"
+          name="idPoducto"
+          placeholder="ingrese el id del producto"
+          #idPoducto="ngModel"
+          matInput
+          [(ngModel)]="curentProducto.id_producto"
+        />
+      </td>
+      <td>
+        <label class="etiqueta">Cantidad del Producto : *</label>
+        <input
+          class="entrada"
+          type="cantidad"
+          id="cantidad"
+          name="cantidad"
+          placeholder="ingrese el cantidad del producto"
+          #cantidad="ngModel"
+          matInput
+          [(ngModel)]="curentProducto.CantidadProductoVenta"
+        />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button
+          class="btnAgregar"
+          (click)="AgregarProducto()" >
+          Agregar Producto
+        </button>
+      </td>
+    </tr>
+  </table>
+
+  <div id="htmlData">
+    <h2>Listado de Productos de la venta</h2>
+    <table class="table table-bordered mt-4"
+    border="1">
+      <tr class="table-primary">
+        <th>Codigo Producto</th>
+        <th>Nombre</th>
+        <th>precio</th>
+        <th>cantidad</th>
+        <th>sub Total</th>
+        <th>accion</th>
+      </tr>
+      <tr *ngFor="let producto of ListadoProductos">
+        <th>{{ producto.id_producto }}</th>
+        <td>{{ producto.descripcion }}</td>
+        <td>{{ producto.precioventa }}</td>
+        <td>{{ producto.CantidadProductoVenta }}</td>
+        <td>{{ producto.SubTotalProductoVenta }}</td>
+        <td><button (click)="eliminarProducto(producto)">Eliminar</button></td>
+      </tr>
+      <tr>
+        <td>Total</td>
+        <td></td><td></td><td></td><td></td>
+        <td class="totalResultado">{{ TotalVenta }}</td>
+      </tr>
+    </table>
+  </div>
+  <div class="buttonContainer">
+    <button
+      class="button"
+      (click)="consultarNitCliente()"
+    >
+      Registrar Venta
+    </button>
+  </div>
+</mat-card>

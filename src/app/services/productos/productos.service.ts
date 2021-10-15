@@ -61,11 +61,11 @@ export class ProductosService {
       precio_venta: productos.precioventa,
       nit_proveedor: productos.nitproveedor,
       id_sucursal: productos.idsucursal,
-      id_estado: productos.idestado,
+      
       id_tipo_producto: productos.idtipoproducto,
     };
     return this.http
-      .put<any>('http://localhost:3001/productos/' + productos.idestado, body)
+      .put<any>('http://localhost:3001/productos/' + productos.id_producto, body)
       .pipe(
         map((resultado) => {
           console.log(resultado)
