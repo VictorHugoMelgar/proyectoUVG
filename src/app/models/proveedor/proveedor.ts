@@ -1,4 +1,4 @@
-export class Proveedor {
+export class Proveedor { 
     nit: string;
     nombre: string;
     apellido: string;
