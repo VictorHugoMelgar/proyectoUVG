@@ -16,17 +16,11 @@ export class VentaService {
 
 
   consultarVenta(venta:Venta,detalleVenta:DetalleVenta[]=new Array<DetalleVenta>()){
-<<<<<<< HEAD
-
-=======
->>>>>>> 3aea6cce2d5bbe875d2cbfdd6dbc04326690b668
     //  return this.http.get('localhost::3000/usuario/consultarUsuarioLogin/'+usuario.user+'-'+usuario.pass)
     return this.http.get('http://localhost:3000/usuario/consultarUsuarioLogin/'+venta.id_venta)
     .pipe(map(resultado =>{
       return resultado
       }))
-<<<<<<< HEAD
-=======
     }
 
 
@@ -38,7 +32,6 @@ export class VentaService {
       return resultado
       }))
 
->>>>>>> 3aea6cce2d5bbe875d2cbfdd6dbc04326690b668
 
     }
 

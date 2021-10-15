@@ -1,10 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-<<<<<<< HEAD
-import { Proveedor } from 'src/app/models/proveedor/proveedor';
-import { ProveedorService } from 'src/app/services/proveedor/proveedor.service';
-
-=======
->>>>>>> 3aea6cce2d5bbe875d2cbfdd6dbc04326690b668
+import { Proveedor } from 'src/app/core/models/proveedor/proveedor';
+import { ProveedorService } from 'src/app/core/services/proveedor/proveedor.service';
 
 @Component({
   selector: 'app-consulta-proveedor',
@@ -12,12 +8,11 @@ import { ProveedorService } from 'src/app/services/proveedor/proveedor.service';
   styleUrls: ['./consulta-proveedor.component.scss']
 })
 export class ConsultaProveedorComponent implements OnInit {
-<<<<<<< HEAD
   public proveedor : Proveedor;
   public proveedorConsultado: string='';
   proveedoresObtenidos: Proveedor[];
 
-  constructor( private proveedorService : ProveedorService) { 
+  constructor( private proveedorService : ProveedorService) {
     this.proveedor = new Proveedor();
     this.proveedoresObtenidos = [];
   }
@@ -29,18 +24,18 @@ export class ConsultaProveedorComponent implements OnInit {
     this.proveedorConsultado='';
 
   }
-  
-  
 
-  
+
+
+
   consultarProveedor(): void {
     this.proveedorConsultado=this.proveedor.nit;
-    
+
     this.proveedorService.consultarProveedor(this.proveedor).subscribe(
       (res) => {
         const data: any = res;
         this.proveedoresObtenidos = data;
-        
+
         if (this.proveedoresObtenidos != null) {
           console.log(this.proveedoresObtenidos);
           if (this.proveedoresObtenidos.length == 0) {
@@ -53,8 +48,8 @@ export class ConsultaProveedorComponent implements OnInit {
             this.proveedor.direccion = data[0].direccion;
             this.proveedor.telefono = data[0].telefono;
             this.proveedor.correo = data[0].correo;
-            
-            
+
+
           }
         }
       },
@@ -63,18 +58,9 @@ export class ConsultaProveedorComponent implements OnInit {
       }
     );
   }
-  
 
-  
-  
-}
 
-=======
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }
->>>>>>> 3aea6cce2d5bbe875d2cbfdd6dbc04326690b668
+

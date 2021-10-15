@@ -1,10 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-<<<<<<< HEAD
-import { Proveedor } from 'src/app/models/proveedor/proveedor';
-import { ProveedorService } from 'src/app/services/proveedor/proveedor.service';
-
-=======
->>>>>>> 3aea6cce2d5bbe875d2cbfdd6dbc04326690b668
+import { Proveedor } from 'src/app/core/models/proveedor/proveedor';
+import { ProveedorService } from 'src/app/core/services/proveedor/proveedor.service';
 
 @Component({
   selector: 'app-actualizar-proveedor',
@@ -13,12 +9,11 @@ import { ProveedorService } from 'src/app/services/proveedor/proveedor.service';
 })
 export class ActualizarProveedorComponent implements OnInit {
 
-<<<<<<< HEAD
   public proveedor : Proveedor;
   public proveedorConsultado: string='';
   proveedoresObtenidos: Proveedor[];
 
-  constructor( private proveedorService : ProveedorService) { 
+  constructor( private proveedorService : ProveedorService) {
     this.proveedor = new Proveedor();
     this.proveedoresObtenidos = [];
   }
@@ -30,7 +25,7 @@ export class ActualizarProveedorComponent implements OnInit {
     this.proveedorConsultado='';
 
   }
-  
+
 
   actualizarProveedor(): void{
     this.proveedorService.actualizarProveedor(this.proveedor).subscribe((res) =>{
@@ -46,14 +41,8 @@ export class ActualizarProveedorComponent implements OnInit {
       alert("Error al registrar");
     })
   }
-  
-}
-
-=======
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }
->>>>>>> 3aea6cce2d5bbe875d2cbfdd6dbc04326690b668
+
+
+

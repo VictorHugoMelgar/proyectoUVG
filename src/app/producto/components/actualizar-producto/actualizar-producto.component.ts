@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-<<<<<<< HEAD
-import { Productos } from 'src/app/models/productos/productos';
-import { ProductosService } from 'src/app/services/productos/productos.service';
-=======
->>>>>>> 3aea6cce2d5bbe875d2cbfdd6dbc04326690b668
+import { Productos } from 'src/app/core/models/productos/productos';
+import { ProductosService } from 'src/app/core/services/productos/productos.service';
 
 @Component({
   selector: 'app-actualizar-producto',
@@ -12,13 +9,12 @@ import { ProductosService } from 'src/app/services/productos/productos.service';
 })
 export class ActualizarProductoComponent implements OnInit {
 
-<<<<<<< HEAD
- 
+
   public productos : Productos;
   public productosConsultado: string='';
   productosObtenidos: Productos[];
 
-  constructor( private productosService : ProductosService) { 
+  constructor( private productosService : ProductosService) {
     this.productos = new Productos();
     this.productosObtenidos = [];
   }
@@ -30,7 +26,7 @@ export class ActualizarProductoComponent implements OnInit {
     this.productosConsultado='';
 
   }
-  
+
 
   actualizarProductos(): void{
     this.productosService.actualizarProductos(this.productos).subscribe((res) =>{
@@ -46,14 +42,6 @@ export class ActualizarProductoComponent implements OnInit {
       alert("Error al registrar");
     })
   }
-  
-}
-
-=======
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }
->>>>>>> 3aea6cce2d5bbe875d2cbfdd6dbc04326690b668
+

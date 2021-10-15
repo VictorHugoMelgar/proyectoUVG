@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-<<<<<<< HEAD
-import { Productos } from 'src/app/models/productos/productos';
-import { ProductosService } from 'src/app/services/productos/productos.service';
-=======
+import { Productos } from 'src/app/core/models/productos/productos';
+import { ProductosService } from 'src/app/core/services/productos/productos.service';
 
->>>>>>> 3aea6cce2d5bbe875d2cbfdd6dbc04326690b668
 @Component({
   selector: 'app-consulta-producto',
   templateUrl: './consulta-producto.component.html',
@@ -12,13 +9,12 @@ import { ProductosService } from 'src/app/services/productos/productos.service';
 })
 export class ConsultaProductoComponent implements OnInit {
 
-<<<<<<< HEAD
- 
+
   public productos : Productos;
   public productosConsultado: string='';
   productosObtenidos: Productos[];
 
-  constructor( private productosService : ProductosService) { 
+  constructor( private productosService : ProductosService) {
     this.productos = new Productos();
     this.productosObtenidos = [];
   }
@@ -30,9 +26,9 @@ export class ConsultaProductoComponent implements OnInit {
     this.productosConsultado='';
 
   }
-  
-  
-  
+
+
+
   consultarProductos(): void {
     this.productosConsultado=this.productos.id_producto;
     this.productosService.consultarProductos(this.productos).subscribe(
@@ -55,9 +51,9 @@ export class ConsultaProductoComponent implements OnInit {
             this.productos.idsucursal = data[0].id_sucursal;
             this.productos.idestado = data[0].id_estado;
             this.productos.idtipoproducto = data[0].id_tipo_producto;
-            
-            
-            
+
+
+
           }
         }
       },
@@ -66,17 +62,9 @@ export class ConsultaProductoComponent implements OnInit {
       }
     );
   }
-  
 
-  
-  
-}
 
-=======
-  constructor() { }
 
-  ngOnInit(): void {
-  }
 
 }
->>>>>>> 3aea6cce2d5bbe875d2cbfdd6dbc04326690b668
+
