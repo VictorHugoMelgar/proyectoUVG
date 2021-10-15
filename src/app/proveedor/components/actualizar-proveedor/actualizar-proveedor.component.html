@@ -1,1 +1,43 @@
+<<<<<<< HEAD
+
+<div id="formulario">
+    <form name="proveedores" method="post">
+      <div class="campo">
+        <label class="titulo" id="NIT">NIT Proveedor</label>
+        <input type="text" class="telefone" pattern=".{13,14}" maxlength="14" name="nit" #nit="ngModel" matIput [(ngModel)]="proveedor.nit" placeholder="xxxxxxxxxx" required>
+        <label id="respostaTel" class="animated shake"></label>
+      </div>
+      <div class="campo">
+        <label class="titulo" id="nombre">Nombre</label>
+        <input type="text" class="cpf" maxlength="30" name="nombre" #nombre="ngModel" matIput [(ngModel)]="proveedor.nombre"placeholder="Nombre Proveedor" required>
+        <label id="respostaCPF" class="animated shake">nombre ya existe</label>
+      </div>
+      <div class="campo">
+        <label class="titulo" id="Apellido">Apellido</label>
+        <input type="text" class="cnpj" maxlength="30" name="apellido" #apellido="ngModel" matIput [(ngModel)]="proveedor.apellido"placeholder="Apellido Proveedor" required>
+        <label id="respostaCNPJ" class="animated shake">Apellido ya existe</label>
+      </div>
+        
+      <div class="campo">
+        <label class="titulo">Direccion</label>
+        <input name="direccion" type="text" id="cep" #direccion="ngModel" matIput [(ngModel)]="proveedor.direccion" placeholder="Direccion Proveedor" required/>
+        <label id="respostaCep" class="animated shake"></label>
+      </div>
+      <div class="campo">
+        <label class="titulo">Telefono</label>
+        <input name="telefono" type="text" id="rua" #telefono="ngModel" matIput [(ngModel)]="proveedor.telefono" placeholder="(xxx)xxxx-xxxx" required/>
+      </div>
+      <div class="campo">
+        <label class="titulo" >Correo</label>
+        <input name="correo" type="text" id="bairro" #correo="ngModel" matIput [(ngModel)]="proveedor.correo" placeholder="Correo Proveedor" required/>
+      </div>
+      
+      
+  
+      <input type="submit" value="Actualizar" (click)="this.actualizarProveedor()">
+     
+    </form>
+  </div>
+=======
 <p>actualizar-proveedor works!</p>
+>>>>>>> 3aea6cce2d5bbe875d2cbfdd6dbc04326690b668

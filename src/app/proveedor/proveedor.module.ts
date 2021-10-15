@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+<<<<<<< HEAD
+=======
 
+>>>>>>> 3aea6cce2d5bbe875d2cbfdd6dbc04326690b668
 import { ProveedorRoutingModule } from './proveedor-routing.module';
 import { RegistroProveedorComponent } from './components/registro-proveedor/registro-proveedor.component';
 import { MaterialModule } from '../material/material.module';
