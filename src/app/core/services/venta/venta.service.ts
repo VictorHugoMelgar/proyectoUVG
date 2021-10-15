@@ -27,7 +27,7 @@ export class VentaService {
 
 
   consultarVentaID(){
- return this.http.get('http://localhost:3000/venta/consultarVentaId/')
+ return this.http.get('http://localhost:3000/venta/consultarVentaid/1')
     .pipe(map(resultado =>{
       return resultado
       }))
@@ -49,8 +49,18 @@ export class VentaService {
        };
     return this.http.post<any>('http://localhost:3000/venta/registrarVenta', body).pipe(map(resultado =>{
     return resultado
-        }))
+        },3000))
       }
 
+
+      eliminarVenta(idVenta:String){
+        const headers = {  };
+        const body = {
+          id_venta:idVenta,
+         };
+      return this.http.post<any>('http://localhost:3000/venta/eliminarVenta/',body).pipe(map(resultado =>{
+      return resultado
+          }))
+        }
 
 }

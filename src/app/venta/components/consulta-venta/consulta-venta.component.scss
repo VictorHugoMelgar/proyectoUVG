@@ -5,7 +5,82 @@ mat-card {
   margin-left: auto;
   margin-right: auto;
 }
+
+
+
 .table-doc{
   width: auto;
   margin: 0 auto;
+}
+
+th{
+  padding: 10px;
+}
+
+td{
+  text-align: center;
+  align-items: center;
+}
+
+.etiqueta {
+  color: green;
+  font-weight: bold;
+  text-align: left;
+  font-size: 25px;
+  margin: auto;
+  padding: 0;
+}
+.btnAgregar{
+
+ // position: absolute;
+  //right: left;
+  bottom: 48;
+  width: 30%;
+  color: white;
+  font-size: 15px;
+  background: #13331a;
+  border-radius: 5px;
+  font-weight: bold;
+  align-content: center;
+  text-align: center;
+  margin: 0;
+
+}
+.button {
+  margin-top: 20px;
+  width: 30%;
+  padding: 12px;
+  color: white;
+  font-size: 15px;
+  background: #13331a;
+  border-radius: 5px;
+  font-weight: bold;
+  align-content: center;
+  text-align: center;
+}
+.tituloLista{
+  font-weight: bold;
+}
+.buttonContainer{
+  text-align: center;
+}
+
+.entrada {
+  margin: 0;
+  padding: 0;
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  font-size: 22px;
+  width: 95%;
+}
+
+.totalResultado{
+text-align: right;
+
+/*
+ align-content: center;
+  text-align: center;
+  margin: auto;
+*/
 }
