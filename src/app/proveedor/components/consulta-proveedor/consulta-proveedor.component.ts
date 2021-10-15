@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+<<<<<<< HEAD
 import { Proveedor } from 'src/app/models/proveedor/proveedor';
 import { ProveedorService } from 'src/app/services/proveedor/proveedor.service';
 
+=======
+>>>>>>> 3aea6cce2d5bbe875d2cbfdd6dbc04326690b668
 
 @Component({
   selector: 'app-consulta-proveedor',
@@ -9,6 +12,7 @@ import { ProveedorService } from 'src/app/services/proveedor/proveedor.service';
   styleUrls: ['./consulta-proveedor.component.scss']
 })
 export class ConsultaProveedorComponent implements OnInit {
+<<<<<<< HEAD
   public proveedor : Proveedor;
   public proveedorConsultado: string='';
   proveedoresObtenidos: Proveedor[];
@@ -65,3 +69,12 @@ export class ConsultaProveedorComponent implements OnInit {
   
 }
 
+=======
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+}
+>>>>>>> 3aea6cce2d5bbe875d2cbfdd6dbc04326690b668

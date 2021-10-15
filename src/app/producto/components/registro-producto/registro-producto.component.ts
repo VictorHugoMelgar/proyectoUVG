@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+<<<<<<< HEAD
 import { Productos } from 'src/app/models/productos/productos';
 import { ProductosService } from 'src/app/services/productos/productos.service';
+=======
+
+>>>>>>> 3aea6cce2d5bbe875d2cbfdd6dbc04326690b668
 @Component({
   selector: 'app-registro-producto',
   templateUrl: './registro-producto.component.html',
@@ -8,6 +12,7 @@ import { ProductosService } from 'src/app/services/productos/productos.service';
 })
 export class RegistroProductoComponent implements OnInit {
 
+<<<<<<< HEAD
 
   public productos : Productos;
   public productosConsultado: string='';
@@ -44,3 +49,11 @@ export class RegistroProductoComponent implements OnInit {
   
 }
 
+=======
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+}
+>>>>>>> 3aea6cce2d5bbe875d2cbfdd6dbc04326690b668
