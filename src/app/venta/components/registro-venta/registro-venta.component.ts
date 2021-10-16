@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { interval } from 'rxjs';
+import { delay } from 'rxjs/operators';
 import { Catalogo } from 'src/app/core/models/catalogo/catalogo';
 import { Cliente } from 'src/app/core/models/cliente/cliente';
 import { DetalleVenta } from 'src/app/core/models/detalle-venta/detalle-venta';
@@ -48,7 +50,7 @@ export class RegistroVentaComponent implements OnInit {
     this.catalogoEstado = new Array<Catalogo>();
     this.transaccionObtenida = new Catalogo();
     this.catalogoTransaccion = new Array<Catalogo>();
-    this.CargarCatalogos();
+    this.CargarCatalogos();// nombre de la funcion que consultara los datos de las sucursales
   }
 
   ngOnInit(): void {}
@@ -176,46 +178,54 @@ export class RegistroVentaComponent implements OnInit {
 
   GuardarVenta() {
    // this.venta.id_usuario = parseInt(sessionStorage.getItem("id_usuario")?.toString());
-  //  this.consultarNitCliente();
+   //this.consultarNitCliente();
     let idUsuario = sessionStorage.getItem("id_usuario")?.toString();
     this.venta.id_usuario=idUsuario;
+   // this.venta.fecha_venta;
     console.log("id usuario es "+idUsuario);
-    let idVentaConsultado=0;
-   // this.venta.id_cliente=this.cliente.id_cliente;
-   this.venta.id_cliente=this.idCliente;
     this.venta.total_venta=parseInt(this.TotalVenta.toString());
+    console.log("registro venta "+this.venta.id_cliente);
     this.ventaService.registrarVenta(this.venta,this.detalleVenta).subscribe(
       (res) => {
         const data: any = res;
-        if (data != null) {
-          if (data.length == 0) {
-            console.log('error al guardar la venta');
-          } else {
-                idVentaConsultado = data.id_venta
-              }}}, (error) => {
-                alert('Eerror al guardar la venta');
+        if (data  != null) {
+          console.log("id del insert es "+data.insertId);
+          alert("venta Registrada Exitosamente")
+          this.venta.id_venta= data.insertId;
+          console.log("IDDDD"+this.venta.id_venta)
+
+
+          for (let i = 0; i< this.ListadoProductos.length; i++) {
+            let curentDetalle:DetalleVenta = new DetalleVenta();
+            console.log("2ID: "+this.venta.id_venta)
+            curentDetalle.id_venta= this.venta.id_venta;
+            curentDetalle.id_producto = parseInt(this.ListadoProductos[i].id_producto.valueOf())
+            curentDetalle.cantidad = this.ListadoProductos[i].CantidadProductoVenta.valueOf()
+            curentDetalle.total_producto = this.ListadoProductos[i].SubTotalProductoVenta.valueOf()
+            this.detalleVenta.push(curentDetalle);
+             }
+             console.log("detalle de venta "+this.detalleVenta.length);
+             this.GuardarDetalleVenta(this.detalleVenta);
+
+         // this.limpiarCampos()
+        }else{
+          alert("venta no Registrada")
+        //  this.limpiarCampos()
+        }
+      }, (error) => {
+                alert('Error al guardar la venta');
               }
 
-    );
-    for (let i = 0; i< this.ListadoProductos.length; i++) {
-      let curentDetalle:DetalleVenta = new DetalleVenta();
-      curentDetalle.id_venta = idVentaConsultado
-      curentDetalle.id_producto = parseInt(this.ListadoProductos[i].existencias.valueOf())
-      curentDetalle.cantidad = this.ListadoProductos[i].CantidadProductoVenta.valueOf()
-      curentDetalle.total_producto = this.ListadoProductos[i].SubTotalProductoVenta.valueOf()
-      this.detalleVenta.push(curentDetalle);
-       }
+    )
 
 
+  // this.GuardarDetalleVenta(this.detalleVenta);
+}
 
-    /*
-    for (let i = 0; i < this.ListadoProductos.length; i++) {
 
-    }
-    */
-  }
 
   GuardarDetalleVenta(detalleVentaLista:DetalleVenta[]): void {
+    console.log("id detalle de venta "+this.detalleVenta[0].id_venta);
     for (let i = 0; i < detalleVentaLista.length; i++) {
       this.detalleVentaService.registrarDetalleVenta(detalleVentaLista[i]).subscribe(data => {
         if (data  != null) {
@@ -239,18 +249,12 @@ export class RegistroVentaComponent implements OnInit {
           if (data.length == 0) {
             alert('Error al consultar el nit del cliente');
           } else {
-            this.cliente.id_cliente = data[0].id_cliente,
-            alert(data[0].id_cliente+' Este es el id del cliente compadre: '+this.cliente.id_cliente );
-            this.cliente.nombre = data[0].nombre,
-            this.idCliente=data[0].id_cliente,
-            this.cliente.apellido = data[0].apellido,
-            this.cliente.nit = data[0].nit_cliente,
-            this.cliente.edad = data[0].edad,
-            this.cliente.genero = data[0].genero,
-            this.cliente.telefono = data[0].telefono,
-            this.cliente.direccion = data[0].direccion,
-            this.cliente.correo = data[0].correo,
-            this.cliente.idEstado = data[0].id_estado
+            this.venta.id_cliente = data[0].id_cliente,
+            alert(data[0].id_cliente+' Este es el id del cliente compadre: '+this.venta.id_cliente );
+           // this.cliente.nombre = data[0].nombre,
+        //    this.idCliente=data[0].id_cliente,
+          //  this.cliente.id_cliente= data[0].id_cliente
+            console.log("id cliente es : "+this.idCliente);
           }
         }
         this.GuardarVenta();

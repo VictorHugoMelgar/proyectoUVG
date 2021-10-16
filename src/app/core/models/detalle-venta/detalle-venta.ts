@@ -1,6 +1,6 @@
 export class DetalleVenta {
   id_detalle_venta: number;
-  id_venta: number;
+  id_venta: String;
   id_producto: number;
   cantidad: number;
   precio_venta: number;
@@ -8,7 +8,7 @@ export class DetalleVenta {
 
   constructor(
     id_detalle_venta = 0,
-    id_venta = 0,
+    id_venta = "",
     id_producto = 0,
     cantidad = 0,
     precio_venta = 0,

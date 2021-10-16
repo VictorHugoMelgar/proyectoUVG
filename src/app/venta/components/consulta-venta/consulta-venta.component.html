@@ -1,6 +1,6 @@
 <mat-card *ngIf="!DisableComponent">
 <div id="htmlData">
-  <h2>Ventas</h2>
+  <h1 class="tituloLista">Ventas</h1>
   <table class="table-doc"
   border="1">
     <tr class="table-primary">
@@ -10,7 +10,6 @@
       <th>Forma de Pago</th>
       <th>Estado</th>
       <th>Total de la venta</th>
-      <th>Accion</th>
     </tr>
     <tr *ngFor="let venta of ListadoVentas">
       <th>{{ venta.fecha_venta }}</th>
@@ -19,7 +18,7 @@
       <td>{{ venta.id_tipo_transaccion }}</td>
       <td>{{ venta.id_estado }}</td>
       <td>{{ venta.total_venta }}</td>
-      <td><button (click)="consultarVenta()">Consultar</button></td>
+      <td><button (click)="consultarVenta(venta)">Consultar</button></td>
     </tr>
   </table>
 </div>
@@ -32,6 +31,158 @@
 </div>
 </mat-card>
 <mat-card *ngIf="DisableComponent">
-  <H1>Hola xD</H1>
-  <button (click)="consultarVenta()">Volver</button>
+
+
+<mat-card >
+  <h1 class="tituloLista">Venta</h1>
+  <table border="0" class="table-doc">
+    <tr>
+      <td>
+        <label class="etiqueta">nit cliente: *</label>
+        <input
+          class="entrada"
+          type="text"
+          id="nit"
+          name="nit"
+          placeholder="ingrese el nit"
+          maxlength="13"
+          minlength="13"
+          #nit="ngModel"
+          matInput
+          [(ngModel)]="selectVenta.nit"
+          disabled =true
+        />
+      </td>
+      <td>
+        <label class="etiqueta">Fecha: *</label>
+        <input
+          class="entrada"
+          type="date"
+          id="fecha"
+          name="fecha"
+          placeholder="ingrese la fecha"
+          #fecha="ngModel"
+          matInput
+          [(ngModel)]="selectVenta.fecha_venta"
+          disabled =true
+        />
+      </td>
+    </tr>
+    <tr>
+      <td>
+         <label class="etiqueta">Estado: *</label>             <select
+          id="estado"
+          class="entrada"
+          name="estado"
+          #estado="ngModel"
+          matInput
+          [(ngModel)]="selectVenta.id_estado"
+          disabled =true
+        >
+        <option value="{{estado.id}}" *ngFor="let estado of catalogoEstado" disabled =true>{{estado.descripcion}}</option>
+
+
+        </select>
+      </td>
+
+      <td>
+         <label class="etiqueta" disabled =true>Transaccion: *</label>             <select
+          id="estado"
+          class="entrada"
+          name="transaccion"
+          #transaccion="ngModel"
+          matInput
+          [(ngModel)]="selectVenta.id_tipo_transaccion"
+          disabled =true
+        >
+
+        <option value="{{transaccion.id}}" *ngFor="let transaccion of catalogoTransaccion" >{{transaccion.descripcion}}</option>
+
+
+        </select >
+      </td>
+    </tr>
+    <tr>
+      <td>
+         <label class="etiqueta" disabled =true>Sucursal: *</label>
+        <select
+          id="sucursal"
+          class="entrada"
+          name="sucursal"
+          #sucursal="ngModel"
+          matInput
+          [(ngModel)]="selectVenta.id_sucursal"
+          disabled =true
+        >
+          <option value="{{sucursal.descripcion}}" *ngFor="let sucursal of catalogoSucursal" >{{sucursal.descripcion}}</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label class="etiqueta">id Porducto : *</label>
+        <input
+          class="entrada"
+          type="idPoducto"
+          id="idPoducto"
+          name="idPoducto"
+          placeholder="ingrese el id del producto"
+          #idPoducto="ngModel"
+          matInput
+          [(ngModel)]="curentProducto.id_producto"
+          disabled =true
+        />
+      </td>
+      <td>
+        <label class="etiqueta">Cantidad del Producto : *</label>
+        <input
+          class="entrada"
+          type="cantidad"
+          id="cantidad"
+          name="cantidad"
+          placeholder="ingrese el cantidad del producto"
+          #cantidad="ngModel"
+          matInput
+          [(ngModel)]="curentProducto.CantidadProductoVenta"
+        />
+      </td>
+    </tr>
+  </table>
+
+  <div id="htmlData">
+    <h1 class="tituloLista">Listado de Productos de la venta</h1>
+    <table class="table-doc"
+    border="1">
+      <tr class="table-primary">
+        <th>Codigo Producto</th>
+        <th>Nombre</th>
+        <th>precio</th>
+        <th>cantidad</th>
+        <th>sub Total</th>
+      </tr>
+      <tr *ngFor="let producto of ListadoProductos">
+        <th>{{ producto.id_producto }}</th>
+        <td>{{ producto.descripcion }}</td>
+        <td>{{ producto.precioventa }}</td>
+        <td>{{ producto.CantidadProductoVenta }}</td>
+        <td>{{ producto.SubTotalProductoVenta }}</td>
+      </tr>
+      <tr>
+        <td>Total</td>
+        <td></td><td></td><td></td>
+        <td class="totalResultado">{{ TotalVenta }}</td>
+      </tr>
+    </table>
+
+<div class="buttonContainer">
+  <button class="button" (click)="volver()">Volver</button>
+
+</div>
+
+  </div>
+
+
+
+</mat-card>
+
 </mat-card>

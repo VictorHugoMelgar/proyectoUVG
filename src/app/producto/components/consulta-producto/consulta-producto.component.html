@@ -1,1 +1,57 @@
-<p>consulta-producto works!</p>
+
+<div id="formulario">
+    <form name="productos" method="post">
+      <div class="campo">
+        <label class="titulo" id="Idproducto">Id Producto</label>
+        <input type="text" class="telefone" pattern=".{13,14}" maxlength="14" name="id_producto" #id_producto="ngModel" matIput [(ngModel)]="productos.id_producto" placeholder="Id producto" required>
+        <label id="respostaTel" class="animated shake"></label>
+      </div>
+      <div class="campo">
+        <label class="titulo" id="descripcion">Descripcion</label>
+        <input type="text" class="cpf" maxlength="30" name="descripcion" #descripcion="ngModel" matIput [(ngModel)]="productos.descripcion" placeholder="Descripcion" required>
+        <label id="respostaCPF" class="animated shake">nombre ya existe</label>
+      </div>
+      <div class="campo">
+        <label class="titulo" id="marca">Marca</label>
+        <input type="text" class="cnpj" maxlength="30" name="marca" #marca="ngModel" matIput [(ngModel)]="productos.marca" placeholder="Marca" required>
+        <label id="respostaCNPJ" class="animated shake">Apellido ya existe</label>
+      </div>
+
+      <div class="campo">
+        <label class="titulo">Existencias</label>
+        <input name="existencias" type="text" id="cep" #existencias="ngModel" matIput [(ngModel)]="productos.existencias" placeholder="Existencias Productos" required/>
+        <label id="respostaCep" class="animated shake"></label>
+      </div>
+      <div class="campo">
+        <label class="titulo">Precio Costo</label>
+        <input name="preciocosto" type="text" id="rua" #preciocosto="ngModel" matIput [(ngModel)]="productos.preciocosto" placeholder="Precio Costo" required/>
+      </div>
+      <div class="campo">
+        <label class="titulo" >Precio Venta</label>
+        <input name="precioventa" type="text" id="bairro" #precioventa="ngModel" matIput [(ngModel)]="productos.precioventa" placeholder="Precio Venta" required/>
+      </div>
+
+      <div class="campo">
+        <label class="titulo">Nit Proveedor</label>
+        <input name="nitproveedor" type="text" id="uf" #nitproveedor="ngModel" matIput [(ngModel)]="productos.nitproveedor"  placeholder="Nit Proveedor" required/>
+      </div>
+
+      <div class="campo">
+        <label class="titulo">Id Sucursal</label>
+        <input name="idsucursal" type="text" id="uf" #idsucursal="ngModel" matIput [(ngModel)]="productos.idsucursal"  placeholder="Id Sucursal" required/>
+      </div>
+
+      <div class="campo">
+        <label class="titulo">Id Estado</label>
+        <input name="idestado" type="text" id="uf" #idestado="ngModel" matIput [(ngModel)]="productos.idestado"  placeholder="Id Estado" required/>
+      </div>
+
+      <div class="campo">
+        <label class="titulo">Id Tipo Producto</label>
+        <input name="idtipoproducto" type="text" id="uf" #idtipoproducto="ngModel" matIput [(ngModel)]="productos.idtipoproducto"  placeholder="Id Tipo Producto" required/>
+      </div>
+
+      <input type="submit" value="Consultar" (click)="this.consultarProductos()">
+
+    </form>
+  </div>

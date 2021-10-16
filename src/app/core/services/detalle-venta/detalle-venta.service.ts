@@ -22,5 +22,25 @@ export class DetalleVentaService {
   return resultado
       }))
     }
-    
+
+    consultarDetalleVenta(idDetalle:String){
+      const headers = {  };
+      const body = {
+     //   id_venta:detalleVenta.id_venta,
+       };
+    return this.http.get<any>('http://localhost:3000/detalle_venta/consultarDetalleVenta/'+idDetalle, body).pipe(map(resultado =>{
+    return resultado
+        }))
+      }
+
+      eliminarDetalleVenta(idVenta:String){
+        const headers = {  };
+        const body = {
+          id_venta:idVenta,
+         };
+      return this.http.post<any>('http://localhost:3000/detalle_venta/eliminarDetalleVenta/',body).pipe(map(resultado =>{
+      return resultado
+          }))
+        }
+
 }

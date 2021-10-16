@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Productos } from 'src/app/core/models/productos/productos';
+import { ProductosService } from 'src/app/core/services/productos/productos.service';
 
 @Component({
   selector: 'app-registro-producto',
@@ -7,9 +9,39 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistroProductoComponent implements OnInit {
 
-  constructor() { }
+
+  public productos : Productos;
+  public productosConsultado: string='';
+  productosObtenidos: Productos[];
+
+  constructor( private productosService : ProductosService) {
+    this.productos = new Productos();
+    this.productosObtenidos = [];
+  }
 
   ngOnInit(): void {
   }
+  limpiarCampos():void{
+    this.productos=new Productos();
+    this.productosConsultado='';
+
+  }
+
+  registrarProductos(): void{
+    this.productosService.registrarProductos(this.productos).subscribe(res =>{
+      const data: any=res;
+      console.log(data)
+      this.productosObtenidos = data;
+      if(this.productosObtenidos != null){
+        alert("Cliente Registrado con Exito")
+          this.limpiarCampos()
+      }
+    }, error =>{
+      alert("Error al registrar");
+    })
+  }
+
+
 
 }
+
