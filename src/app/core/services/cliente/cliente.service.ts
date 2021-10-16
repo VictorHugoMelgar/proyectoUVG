@@ -24,6 +24,15 @@ export class ClienteService {
 
 }
 
+consultarClientepd(){                                 
+  return this.http.get('http://localhost:3000/cliente/consultarClientepd/')
+  .pipe(map(resultado =>{
+    return resultado
+    }))
+
+  }
+
+
 
 
 

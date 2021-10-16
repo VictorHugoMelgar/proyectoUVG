@@ -10,8 +10,7 @@ const routes: Routes = [
     path:'',
     children:[
       {
-        path:"registro-sucursal",
-        component:RegistroSucursalComponent,
+        path:"registro-sucursal",component:RegistroSucursalComponent,
         //canActivate:[RolGuardGuard]
         },
         {

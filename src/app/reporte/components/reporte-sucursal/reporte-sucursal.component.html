@@ -1,1 +1,28 @@
-<p>reporte-sucursal works!</p>
+<mat-card>
+  <div id="htmlData">
+    <h2>Lista de Sucursales</h2>
+    <table class="table table-bordered mt-4"
+    border="1">
+      <tr class="table-primary">
+        <th>nombre</th>
+        <th>descripcion</th>
+        <th>direccion</th>
+        <th>telefono</th>
+        <th>correo</th>
+        <th>idEstado</th>
+      </tr>
+      <tr *ngFor="let sucursal of ListadoSucursales">
+        <th>{{ sucursal.nombre }}</th>
+        <td>{{ sucursal.descripcion }}</td>
+        <td>{{ sucursal.direccion }}</td>
+        <td>{{ sucursal.telefono }}</td>
+        <td>{{ sucursal.correo }}</td>
+        <td>{{ sucursal.idEstado }}</td>
+       
+      </tr>
+    </table>
+  </div>
+  <div>
+  <button class="btn col col-lg-4 btn-danger btn-block ml-4" (click)="downloadPDF()">Download PDF</button>
+  </div>
+  </mat-card>

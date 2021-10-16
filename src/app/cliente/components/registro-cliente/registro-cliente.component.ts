@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Cliente } from 'src/app/core/models/cliente/cliente';
 import { ClienteService } from 'src/app/core/services/cliente/cliente.service';
+//import { ClienteService } from 'src/app/core/services/cliente/cliente.service';
+//import { ClienteService } from 'src/app/core/services/cliente/cliente.service';
 
 @Component({
   selector: 'app-registro-cliente',
@@ -16,7 +18,8 @@ public cliente:Cliente
 
    registrarCliente(): void {
 if(this.cliente.nombre != null && this.cliente.apellido != null &&
-  this.cliente.genero != 0 &&  this.cliente.edad != null && this.cliente.edad > 0  && this.cliente.direccion != null &&
+  this.cliente.genero != 0 &&  this.cliente.edad != null && 
+  this.cliente.edad > 0  && this.cliente.direccion != null &&
   this.cliente.fecha_nacimiento != null  &&   this.cliente.idEstado !=0){
     this.clienteService.registrarCliente(this.cliente).subscribe(data => {
       if (data  != null) {
@@ -32,6 +35,7 @@ if(this.cliente.nombre != null && this.cliente.apellido != null &&
     alert("Los campos faltantes son obligatorios (*)")
 }
   }
+
   limpiarCampos():void{
     this.cliente=new Cliente();
   }

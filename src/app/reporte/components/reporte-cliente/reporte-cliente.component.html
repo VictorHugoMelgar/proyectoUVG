@@ -1,1 +1,37 @@
-<p>reporte-cliente works!</p>
+<mat-card>
+    <div id="htmlData">
+      <h2>Lista de Clientes</h2>
+      <table class="table table-bordered mt-4"
+      border="1">
+        <tr class="table-primary">
+          <th>nit</th>
+          <th>nsdombre</th>
+          <th>apellido</th>
+          <th>telefono</th>
+          <th>edad</th>
+          <th>genero</th>
+          <th>correo</th>         
+          <th>direccion</th>
+          <th>fecha de nacimiento</th>
+          <th>idEstado</th>
+        </tr>
+      
+        <tr *ngFor="let cliente of ListadoClientes">
+          <th>{{ cliente.id_cliente }}</th>
+          <td>{{ cliente.nombre }}</td>
+          <td>{{ cliente.apellido }}</td>         
+          <td>{{ cliente.telefono }}</td>
+          <td>{{ cliente.edad }}</td>         
+          <td>{{ cliente.genero }}</td>
+          <td>{{ cliente.correo }}</td>  
+          <td>{{ cliente.direccion }}</td>
+          <td>{{ cliente.fecha_nacimiento}}</td>
+          <td>{{ cliente.idEstado }}</td>
+          
+        </tr>
+      </table>
+    </div>
+    <div>
+    <button class="btn col col-lg-4 btn-danger btn-block ml-4" (click)="downloadPDF()">Download PDF</button>
+    </div>
+    </mat-card>

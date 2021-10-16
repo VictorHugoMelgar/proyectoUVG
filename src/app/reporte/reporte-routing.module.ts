@@ -7,6 +7,8 @@ import { ReporteProveedorComponent } from './components/reporte-proveedor/report
 import { ReporteSucursalComponent } from './components/reporte-sucursal/reporte-sucursal.component';
 import { ReporteUsuarioComponent } from './components/reporte-usuario/reporte-usuario.component';
 import { ReporteVentaComponent } from './components/reporte-venta/reporte-venta.component';
+import { ReporteClienteComponent } from './components/reporte-cliente/reporte-cliente.component';
+import { ReporteUsuarioComponent } from './components/reporte-usuario/reporte-usuario.component';
 
 const routes: Routes = [
 {
@@ -22,6 +24,23 @@ const routes: Routes = [
         component:ReporteVentaComponent,
         //canActivate:[RolGuardGuard]
         },
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+        {
+          path:"reporte-cliente",
+          component:ReporteClienteComponent,
+          //canActivate:[RolGuardGuard]
+          },
+          {
+            path:"reporte-usuario",
+            component:ReporteUsuarioComponent,
+            //canActivate:[RolGuardGuard]
+            }
+  ]
+=======
+=======
+>>>>>>> 66f3dda0cae76b76a7ead3830a59f472375f25f4
         {
           path:"reporte-usuario",
           component:ReporteUsuarioComponent,
@@ -48,6 +67,10 @@ const routes: Routes = [
                   //canActivate:[RolGuardGuard]
                   }
       ]
+<<<<<<< HEAD
+>>>>>>> a53b20b14d7a700896998fe438af8cfd6cd8fb34
+=======
+>>>>>>> 66f3dda0cae76b76a7ead3830a59f472375f25f4
   }
 
 ];
