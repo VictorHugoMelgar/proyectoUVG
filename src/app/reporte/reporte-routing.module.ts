@@ -25,6 +25,7 @@ const routes: Routes = [
         //canActivate:[RolGuardGuard]
         },
 <<<<<<< HEAD
+<<<<<<< HEAD
 
         {
           path:"reporte-cliente",
@@ -38,6 +39,8 @@ const routes: Routes = [
             }
   ]
 =======
+=======
+>>>>>>> 66f3dda0cae76b76a7ead3830a59f472375f25f4
         {
           path:"reporte-usuario",
           component:ReporteUsuarioComponent,
@@ -64,7 +67,10 @@ const routes: Routes = [
                   //canActivate:[RolGuardGuard]
                   }
       ]
+<<<<<<< HEAD
 >>>>>>> a53b20b14d7a700896998fe438af8cfd6cd8fb34
+=======
+>>>>>>> 66f3dda0cae76b76a7ead3830a59f472375f25f4
   }
 
 ];

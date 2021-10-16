@@ -38,7 +38,7 @@ export class ConsultaProductoComponent implements OnInit {
         if (this.productosObtenidos != null) {
           console.log(this.productosObtenidos);
           if (this.productosObtenidos.length == 0) {
-            alert('Error al consultar el usuario');
+            alert('Error al consultar el Producto, No existe ');
             this.limpiarCampos();
           } else {
             console.log(this.productosObtenidos);
@@ -47,8 +47,8 @@ export class ConsultaProductoComponent implements OnInit {
             this.productos.existencias = data[0].existencias;
             this.productos.preciocosto = data[0].precio_costo;
             this.productos.precioventa = data[0].precio_venta;
-            this.productos.nitproveedor = data[0].nit_proveedor;
-            this.productos.idsucursal = data[0].id_sucursal;
+           
+           
             this.productos.idestado = data[0].id_estado;
             this.productos.idtipoproducto = data[0].id_tipo_producto;
 
