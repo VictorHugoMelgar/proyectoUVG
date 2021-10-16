@@ -63,4 +63,20 @@ export class VentaService {
           }))
         }
 
+
+        actualizarVenta(venta:Venta){
+          const headers = {  };
+          const body = {
+            id_cliente:venta.id_cliente,
+            fecha_venta:venta.fecha_venta,
+            total_venta:venta.total_venta,
+            id_estado:venta.id_estado,
+            id_tipo_transaccion:venta.id_tipo_transaccion,
+            id_usuario:venta.id_usuario,
+            id_sucursal:venta.id_sucursal,
+           };
+        return this.http.post<any>('http://localhost:3000/venta/actualizarVenta', body).pipe(map(resultado =>{
+        return resultado
+            },3000))
+          }
 }

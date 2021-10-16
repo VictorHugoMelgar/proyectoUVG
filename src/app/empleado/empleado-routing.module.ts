@@ -5,10 +5,39 @@ import { MenuPrincipalComponent } from './components/menu-principal/menu-princip
 
 const routes: Routes = [
   {
+    /*
     path: '',
     component: MenuPrincipalComponent,
    canActivate: [RolGuardGuard],
     canDeactivate: [RolGuardGuard],
+    */
+    path: '',
+   children:[
+    {
+      path: 'menu',
+      component: MenuPrincipalComponent,
+     // canActivate: [RolGuardGuard],
+     // canDeactivate: [RolGuardGuard],
+    },
+ {
+  path:'cliente',
+  loadChildren:()=>import('./../cliente/cliente.module').then((m)=>m.ClienteModule),
+},
+{
+  path:'producto',
+  loadChildren:()=>import('./../producto/producto.module').then((m)=>m.ProductoModule),
+},
+{
+path:'venta',
+loadChildren:()=>import('./../venta/venta.module').then((m)=>m.VentaModule),
+},
+{
+  path:'compra',
+  loadChildren:()=>import('./../compra/compra.module').then((m)=>m.CompraModule),
+  },
+
+   ]
+
   },
 
 ];

@@ -43,4 +43,14 @@ export class DetalleVentaService {
           }))
         }
 
+        actualizarDetalleVenta(idVenta:String){
+          const headers = {  };
+          const body = {
+            id_venta:idVenta,
+           };
+        return this.http.post<any>('http://localhost:3000/detalle_venta/actualizarDetalleVenta/',body).pipe(map(resultado =>{
+        return resultado
+            }))
+          }
+
 }

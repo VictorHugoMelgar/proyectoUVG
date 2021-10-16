@@ -15,20 +15,8 @@
     <li>
       <a href="#" class="animenu__nav__hasDropdown" aria-haspopup="true">Cuenta</a>
       <ul class="animenu__nav__dropdown" aria-label="submenu" role="menu">
-        <li><a role="menuitem" >Perfil</a></li>
-        <li><a role="menuitem">Cambiar Contraseña</a></li>
         <li><a role="menuitem" (click)="this.navegacionMenu('cerrarSesion')" >Cerrar Session</a></li>
       </ul>
-    </li>
-    <li>
-      <a href="#" class="animenu__nav__hasDropdown" aria-haspopup="true">Usuarios</a>
-      <ul class="animenu__nav__dropdown" aria-label="submenu" role="menu">
-        <li><a role="menuitem" (click)="this.navegacionMenu('registroUsuario')"  >Crear Usuario</a></li>
-        <li><a role="menuitem" (click)="this.navegacionMenu('consultaUsuario')">Consultar Usuario</a></li>
-        <li><a  role="menuitem" (click)="this.navegacionMenu('actualizarUsuario')">Actualizar Usuario</a></li>
-        <li><a  role="menuitem" (click)="this.navegacionMenu('eliminarUsuario')">Eliminar Usuario</a></li>
-      </ul>
-    </li>
     <li>
       <a href="#" class="animenu__nav__hasDropdown" aria-haspopup="true">Clientes</a>
       <ul class="animenu__nav__dropdown" aria-label="submenu" role="menu">
@@ -38,21 +26,35 @@
         <li><a  role="menuitem" (click)="this.navegacionMenu('eliminarCliente')">Eliminar Cliente</a></li>
       </ul>
     </li>
+
     <li>
-      <a href="#" class="animenu__nav__hasDropdown" aria-haspopup="true">Proveedor</a>
+      <a href="#" class="animenu__nav__hasDropdown" aria-haspopup="true">Productos</a>
       <ul class="animenu__nav__dropdown" aria-label="submenu" role="menu">
-        <li><a role="menuitem" routerLink="administrador/crear-proveedor" >Crear Proveedor</a></li>
-        <li><a role="menuitem"  routerLink="administrador/consultar-proveedor" >Consultar Proveedor</a></li>
-        <li><a  role="menuitem"  routerLink="administrador/actualizar-proveedor" >Actualizar Proveedor</a></li>
-        <li><a  role="menuitem"  routerLink="administrador/eliminar-proveedor" >Eliminar Proveedor</a></li>
+        <li><a role="menuitem"  routerLinkActive="active" routerLink="/administrador/producto/registro-producto"   >registrar Producto</a></li>
+        <li><a role="menuitem" routerLinkActive="active" routerLink="/administrador/producto/consulta-producto" >Consultar Producto</a></li>
+        <li><a  role="menuitem" routerLinkActive="active" routerLink="/administrador/producto/actualizar-producto" >Actualizar Producto</a></li>
+        <li><a  role="menuitem" routerLinkActive="active" routerLink="/administrador/producto/eliminar-producto" >Eliminar Producto</a></li>
       </ul>
     </li>
+
     <li>
-      <a href="#" class="animenu__nav__hasDropdown" aria-haspopup="true">Cursos</a>
+      <a href="#" class="animenu__nav__hasDropdown" aria-haspopup="true">Venta</a>
       <ul class="animenu__nav__dropdown" aria-label="submenu" role="menu">
-        <li><a role="menuitem">Crear curso</a></li>
-        <li><a role="menuitem">Editarcurso</a></li>
-        <li><a  role="menuitem">Actualizar Curso</a></li>
+        <li><a role="menuitem"  routerLinkActive="active" routerLink="/administrador/venta/registro-venta"   >registrar Venta</a></li>
+        <li><a role="menuitem" routerLinkActive="active" routerLink="/administrador/venta/consulta-venta" >Consultar Venta</a></li>
+        <li><a  role="menuitem" routerLinkActive="active" routerLink="/administrador/venta/actualizar-venta" >Actualizar Venta</a></li>
+        <li><a  role="menuitem" routerLinkActive="active" routerLink="/administrador/venta/eliminar-venta" >Eliminar Venta</a></li>
+      </ul>
+    </li>
+
+
+    <li>
+      <a href="#" class="animenu__nav__hasDropdown" aria-haspopup="true">Compra</a>
+      <ul class="animenu__nav__dropdown" aria-label="submenu" role="menu">
+        <li><a role="menuitem"  routerLinkActive="active" routerLink="/administrador/compra/registro-compra"   >registrar Compra</a></li>
+        <li><a role="menuitem" routerLinkActive="active" routerLink="/administrador/compra/consulta-compra" >Consultar Compra</a></li>
+        <li><a  role="menuitem" routerLinkActive="active" routerLink="/administrador/compra/actualizar-compra" >Actualizar Compra</a></li>
+        <li><a  role="menuitem" routerLinkActive="active" routerLink="/administrador/compra/eliminar-compra" >Eliminar Compra</a></li>
       </ul>
     </li>
 
