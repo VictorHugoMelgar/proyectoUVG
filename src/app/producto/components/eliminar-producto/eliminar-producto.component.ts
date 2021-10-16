@@ -1,10 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-<<<<<<< HEAD
-import { Productos } from 'src/app/models/productos/productos';
-import { ProductosService } from 'src/app/services/productos/productos.service';
-=======
-
->>>>>>> 3aea6cce2d5bbe875d2cbfdd6dbc04326690b668
+import { Productos } from 'src/app/core/models/productos/productos';
+import { ProductosService } from 'src/app/core/services/productos/productos.service';
 @Component({
   selector: 'app-eliminar-producto',
   templateUrl: './eliminar-producto.component.html',
@@ -12,12 +8,11 @@ import { ProductosService } from 'src/app/services/productos/productos.service';
 })
 export class EliminarProductoComponent implements OnInit {
 
-<<<<<<< HEAD
   public productos : Productos;
   public productosConsultado: string='';
   productosObtenidos: Productos[];
 
-  constructor( private productosService : ProductosService) { 
+  constructor( private productosService : ProductosService) {
     this.productos = new Productos();
     this.productosObtenidos = [];
   }
@@ -29,7 +24,7 @@ export class EliminarProductoComponent implements OnInit {
     this.productosConsultado='';
 
   }
-   
+
   eliminarProductos(): void {
     this.productosConsultado=this.productos.id_producto;
     this.productosService.elimnarProductos(this.productos).subscribe(
@@ -37,7 +32,7 @@ export class EliminarProductoComponent implements OnInit {
         const data: any = res;
         this.productosObtenidos = data;
         console.log(data);
-        alert('Usuario eliminado');
+        alert('Producto eliminado');
       },
       (error) => {
         alert('Error al consultar el usuario');
@@ -45,13 +40,6 @@ export class EliminarProductoComponent implements OnInit {
     );
   }
 
-  
-  
-=======
-  constructor() { }
 
-  ngOnInit(): void {
-  }
 
->>>>>>> 3aea6cce2d5bbe875d2cbfdd6dbc04326690b668
 }

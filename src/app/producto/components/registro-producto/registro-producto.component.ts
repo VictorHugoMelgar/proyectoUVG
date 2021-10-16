@@ -1,18 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-<<<<<<< HEAD
-import { Productos } from 'src/app/models/productos/productos';
-import { ProductosService } from 'src/app/services/productos/productos.service';
-=======
+import { Productos } from 'src/app/core/models/productos/productos';
+import { ProductosService } from 'src/app/core/services/productos/productos.service';
 
->>>>>>> 3aea6cce2d5bbe875d2cbfdd6dbc04326690b668
 @Component({
   selector: 'app-registro-producto',
   templateUrl: './registro-producto.component.html',
   styleUrls: ['./registro-producto.component.scss']
 })
 export class RegistroProductoComponent implements OnInit {
-
-<<<<<<< HEAD
 
   public productos : Productos;
   public productosConsultado: string='';
@@ -34,14 +29,15 @@ export class RegistroProductoComponent implements OnInit {
   registrarProductos(): void{
     this.productosService.registrarProductos(this.productos).subscribe(res =>{
       const data: any=res;
+      console.log(res)
       console.log(data)
       this.productosObtenidos = data;
       if(this.productosObtenidos != null){
-        alert("Cliente Registrado con Exito")
+        alert("Producto Registrado con Exito")
           this.limpiarCampos()
       }
     }, error =>{
-      alert("Error al registrar");
+      alert("Error al registrar Producto ya Existe");
     })
   }
 
@@ -49,11 +45,3 @@ export class RegistroProductoComponent implements OnInit {
   
 }
 
-=======
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-}
->>>>>>> 3aea6cce2d5bbe875d2cbfdd6dbc04326690b668

@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-<<<<<<< HEAD
-import { Proveedor } from 'src/app/models/proveedor/proveedor';
-import { ProveedorService } from 'src/app/services/proveedor/proveedor.service';
+import { Proveedor } from 'src/app/core/models/proveedor/proveedor';
+import { ProveedorService } from 'src/app/core/services/proveedor/proveedor.service';
 
-=======
->>>>>>> 3aea6cce2d5bbe875d2cbfdd6dbc04326690b668
 
 @Component({
   selector: 'app-eliminar-proveedor',
@@ -13,12 +10,11 @@ import { ProveedorService } from 'src/app/services/proveedor/proveedor.service';
 })
 export class EliminarProveedorComponent implements OnInit {
 
-<<<<<<< HEAD
   public proveedor : Proveedor;
   public proveedorConsultado: string='';
   proveedoresObtenidos: Proveedor[];
 
-  constructor( private proveedorService : ProveedorService) { 
+  constructor( private proveedorService : ProveedorService) {
     this.proveedor = new Proveedor();
     this.proveedoresObtenidos = [];
   }
@@ -30,7 +26,7 @@ export class EliminarProveedorComponent implements OnInit {
     this.proveedorConsultado='';
 
   }
-  
+
   eliminarProveedor(): void {
     this.proveedorConsultado=this.proveedor.nit;
     this.proveedorService.elimnarProveedor(this.proveedor).subscribe(
@@ -38,7 +34,7 @@ export class EliminarProveedorComponent implements OnInit {
         const data: any = res;
         this.proveedoresObtenidos = data;
         console.log(data);
-        alert('Usuario eliminado');
+        alert('Proveedor eliminado');
       },
       (error) => {
         alert('Error al consultar el usuario');
@@ -46,13 +42,6 @@ export class EliminarProveedorComponent implements OnInit {
     );
   }
 
-  
-  
-=======
-  constructor() { }
 
-  ngOnInit(): void {
-  }
 
->>>>>>> 3aea6cce2d5bbe875d2cbfdd6dbc04326690b668
 }
