@@ -9,10 +9,8 @@ import { ProductosService } from 'src/app/core/services/productos/productos.serv
 })
 export class RegistroProductoComponent implements OnInit {
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 66f3dda0cae76b76a7ead3830a59f472375f25f4
+
   public productos : Productos;
   public productosConsultado: string='';
   productosObtenidos: Productos[];
@@ -45,12 +43,6 @@ export class RegistroProductoComponent implements OnInit {
     })
   }
 
-<<<<<<< HEAD
 
-
-=======
-  
-  
->>>>>>> 66f3dda0cae76b76a7ead3830a59f472375f25f4
 }
 

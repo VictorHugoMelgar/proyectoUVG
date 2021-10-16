@@ -9,11 +9,7 @@ import { ProductosService } from 'src/app/core/services/productos/productos.serv
 })
 export class ActualizarProductoComponent implements OnInit {
 
-<<<<<<< HEAD
 
-=======
- 
->>>>>>> 66f3dda0cae76b76a7ead3830a59f472375f25f4
   public productos : Productos;
   public productosConsultado: string='';
   productosObtenidos: Productos[];
@@ -46,10 +42,6 @@ export class ActualizarProductoComponent implements OnInit {
       alert("Error al registrar");
     })
   }
-<<<<<<< HEAD
 
-=======
-  
->>>>>>> 66f3dda0cae76b76a7ead3830a59f472375f25f4
 }
 
