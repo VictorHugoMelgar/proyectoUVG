@@ -68,8 +68,12 @@ export class ReporteVentaComponent implements OnInit {
 
 
 
+<<<<<<< HEAD
+=======
 /*
+>>>>>>> 66f3dda0cae76b76a7ead3830a59f472375f25f4
   public downloadPDF(): void {
+   /*
     const DATA = document.getElementById('htmlData') as HTMLElement;
     const doc = new jsPDF('p', 'pt', 'a4');
     const options = {
@@ -87,10 +91,11 @@ export class ReporteVentaComponent implements OnInit {
       doc.addImage(img, 'PNG', bufferX, bufferY, pdfWidth, pdfHeight, undefined, 'FAST');
       return doc;
     }).then((docResult) => {docResult.save('reporteEjemplo.pdf'); });
+*/
   }
 
 
-*/
+
   ngOnInit(): void {
   }
 
