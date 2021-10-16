@@ -111,3 +111,27 @@
 
   </ul>
 </nav>
+<mat-card>
+  <div id="htmlData">
+    <h2>Listado de USUARIOS</h2>
+    <table class="table-doc" border="1">
+    <tr class="table-primary">
+      <th>Usuario</th>
+      <th>Password</th>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Rol</th>
+      <th>Estado</th>
+    </tr>
+    <tr *ngFor="let venta of ListadoUsuarios">
+    <!--  <th>{{  }}</th>
+      <td>{{ venta.id_sucursal }}</td>
+      <td>{{ venta.nombre_cliente }}</td>
+      <td>{{ venta.id_tipo_transaccion }}</td>
+      <td>{{ venta.id_estado }}</td>
+      <td>{{ venta.total_venta }}</td>-->
+    </tr>
+  </table>
+  </div>
+
+  </mat-card>

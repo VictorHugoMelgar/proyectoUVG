@@ -47,5 +47,12 @@ export class CatalogoService {
               }))
 
             }
+            consultarCatalogoUsuarios(){
+              return this.http.get('http://localhost:3000/catalogos/consultarCatalogoUsuario')
+              .pipe(map(resultado =>{
+                return resultado
+                }))
+
+              }
 
 }
