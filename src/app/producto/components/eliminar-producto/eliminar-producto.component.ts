@@ -32,7 +32,7 @@ export class EliminarProductoComponent implements OnInit {
         const data: any = res;
         this.productosObtenidos = data;
         console.log(data);
-        alert('Usuario eliminado');
+        alert('Producto eliminado');
       },
       (error) => {
         alert('Error al consultar el usuario');

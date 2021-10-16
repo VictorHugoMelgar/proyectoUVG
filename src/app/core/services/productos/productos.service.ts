@@ -43,13 +43,11 @@ export class ProductosService {
       descripcion: productos.descripcion,
       marca: productos.marca,
       existencias: productos.existencias,
-      precio_costo: productos.preciocosto,
-      precio_venta: productos.precioventa,
-      nit_proveedor: productos.nitproveedor,
-      id_sucursal: productos.idsucursal,
-      id_estado: productos.idestado,
-      id_tipo_producto: productos.idtipoproducto,
-    };
+      preciocosto: productos.preciocosto,
+      precioventa: productos.precioventa, 
+     
+      idtipoproducto: productos.idtipoproducto,
+    }; console.log(body);
     return this.http.post<any>('http://localhost:3000/productos/', body).pipe(
       map((resultado) => {
         console.log(resultado);
@@ -67,13 +65,11 @@ export class ProductosService {
       existencias: productos.existencias,
       precio_costo: productos.preciocosto,
       precio_venta: productos.precioventa,
-      nit_proveedor: productos.nitproveedor,
-      id_sucursal: productos.idsucursal,
-      id_estado: productos.idestado,
+     
       id_tipo_producto: productos.idtipoproducto,
     };
     return this.http
-      .put<any>('http://localhost:3000/productos/' + productos.idestado, body)
+      .put<any>('http://localhost:3000/productos/' + productos.id_producto, body)
       .pipe(
         map((resultado) => {
           console.log(resultado)
@@ -81,3 +77,4 @@ export class ProductosService {
         })
       );
 }}
+ 

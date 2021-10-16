@@ -33,7 +33,7 @@ export class ActualizarProveedorComponent implements OnInit {
       console.log("imprimiendoda", data)
       this.proveedoresObtenidos = data;
       if(this.proveedoresObtenidos != null){
-        alert("Cliente actualizado con Exito")
+        alert("Proveedor actualizado con Exito")
           this.limpiarCampos()
       }
     }, error =>{

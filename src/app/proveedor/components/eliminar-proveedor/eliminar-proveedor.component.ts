@@ -34,7 +34,7 @@ export class EliminarProveedorComponent implements OnInit {
         const data: any = res;
         this.proveedoresObtenidos = data;
         console.log(data);
-        alert('Usuario eliminado');
+        alert('Proveedor eliminado');
       },
       (error) => {
         alert('Error al consultar el usuario');

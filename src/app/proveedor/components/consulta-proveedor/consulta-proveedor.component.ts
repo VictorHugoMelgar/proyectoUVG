@@ -39,7 +39,7 @@ export class ConsultaProveedorComponent implements OnInit {
         if (this.proveedoresObtenidos != null) {
           console.log(this.proveedoresObtenidos);
           if (this.proveedoresObtenidos.length == 0) {
-            alert('Error al consultar el usuario');
+            alert('Error al consultar el Proveedor, No existe');
             this.limpiarCampos();
           } else {
             console.log(this.proveedoresObtenidos);
@@ -54,7 +54,7 @@ export class ConsultaProveedorComponent implements OnInit {
         }
       },
       (error) => {
-        alert('Error al consultar el usuario');
+        alert('Error al consultar el proveedor, usuario inactivo o no existe');
       }
     );
   }

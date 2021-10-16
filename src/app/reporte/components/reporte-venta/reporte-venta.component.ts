@@ -68,6 +68,10 @@ export class ReporteVentaComponent implements OnInit {
 
 
 
+<<<<<<< HEAD
+=======
+/*
+>>>>>>> 66f3dda0cae76b76a7ead3830a59f472375f25f4
   public downloadPDF(): void {
    /*
     const DATA = document.getElementById('htmlData') as HTMLElement;
