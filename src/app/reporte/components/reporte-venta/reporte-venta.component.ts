@@ -68,8 +68,8 @@ export class ReporteVentaComponent implements OnInit {
 
 
 
-/*
   public downloadPDF(): void {
+   /*
     const DATA = document.getElementById('htmlData') as HTMLElement;
     const doc = new jsPDF('p', 'pt', 'a4');
     const options = {
@@ -87,10 +87,11 @@ export class ReporteVentaComponent implements OnInit {
       doc.addImage(img, 'PNG', bufferX, bufferY, pdfWidth, pdfHeight, undefined, 'FAST');
       return doc;
     }).then((docResult) => {docResult.save('reporteEjemplo.pdf'); });
+*/
   }
 
 
-*/
+
   ngOnInit(): void {
   }
 
