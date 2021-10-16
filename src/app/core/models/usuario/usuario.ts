@@ -1,4 +1,5 @@
 export class Usuario {
+  id_usuario:number;
   user: string;
   pass: string;
   nombre: string;
@@ -6,7 +7,8 @@ export class Usuario {
   idRol: number;
   idEstado: number;
 
-  constructor(user = '', pass = '', nombre = '', apellido = '', idRol = 0, idEstado = 0){
+  constructor(id_usuario=0,user = '', pass = '', nombre = '', apellido = '', idRol = 0, idEstado = 0){
+    this.id_usuario=id_usuario;
     this.user = user;
     this.pass = pass;
     this.nombre = nombre;

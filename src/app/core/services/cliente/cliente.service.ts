@@ -12,6 +12,8 @@ export class ClienteService {
   constructor(private http:HttpClient) {
     this.cliente=new Cliente;
    }
+
+
   consultarCliente(cliente:Cliente){
     const nit_cliente=cliente.nit
     console.log(nit_cliente)
@@ -21,6 +23,19 @@ export class ClienteService {
     }))
 
 }
+
+consultarClientepd(){                                 
+  return this.http.get('http://localhost:3000/cliente/consultarClientepd/')
+  .pipe(map(resultado =>{
+    return resultado
+    }))
+
+  }
+
+
+
+
+
 
 registrarCliente(cliente:Cliente){
   const headers = {  };

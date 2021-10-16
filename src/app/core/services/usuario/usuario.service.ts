@@ -47,7 +47,13 @@ export class UsuarioService {
 
         }
 
-
+        consultarUsuariopd(){                                 
+          return this.http.get('http://localhost:3000/usuario/consultarUsuariopd/')
+          .pipe(map(resultado =>{
+            return resultado
+            }))
+        
+          }
 
         actualizarUsuario(usuario:Usuario,usuarioConsultado:String){
           const headers = {  };

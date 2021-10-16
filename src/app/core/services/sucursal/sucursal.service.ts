@@ -37,6 +37,14 @@ export class SucursalService {
         }))
 
       }
+       
+      consultarSucursalpd(){                                 
+        return this.http.get('http://localhost:3000/sucursal/consultarSucursalpd/')
+        .pipe(map(resultado =>{
+          return resultado
+          }))
+
+        }
     
 
     actualizarSucursal(sucursal:Sucursal,sucursalConsultado:String){
