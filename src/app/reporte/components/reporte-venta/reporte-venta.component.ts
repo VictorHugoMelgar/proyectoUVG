@@ -10,6 +10,7 @@ import { ClienteService } from 'src/app/core/services/cliente/cliente.service';
   templateUrl: './reporte-venta.component.html',
   styleUrls: ['./reporte-venta.component.scss']
 })
+
 export class ReporteVentaComponent implements OnInit {
   ListadoVentas:Venta[];
   ventaObtenida:Venta;
